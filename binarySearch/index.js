@@ -13,8 +13,24 @@
  */
 
 const binarySearch = (nums, target) => {
+    // binary search works by splitting the array in half and moving pointer left or right of the mid pointer
+    // this binary search has a time complexity of O(log n)
+    let l = 0;
+    let r = nums.length - 1;
 
+    while (l <= r) {
+        let mid = Math.floor((l + r) / 2);
 
+        if (nums[mid] > target) {
+            r = mid - 1;
+        }
+        else if (nums[mid] < target) {
+            l = mid + 1;
+        }else {
+            return mid;
+        }
+        
+    }
 }
 
 module.exports = binarySearch;
